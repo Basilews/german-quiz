@@ -1,0 +1,32 @@
+:host {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 600px;
+  height: 400px;
+  text-align: center;
+  background: whitesmoke;
+  border-radius: 8px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+}
+
+::slotted(button) {
+  width: 100px;
+  height: 40px;
+  margin: 0 8px;
+  font-size: 16px;
+  border-radius: 8px;
+  background: white;
+}
+
+::slotted(.tafel) {
+  height: 40px;
+  font-weight: bold;
+}
