@@ -2,6 +2,9 @@ class AppAnzeigetafel extends HTMLElement {
   constructor() {
     super();
 
+    this.lang = 'en';
+    this.count = 0;
+
     this.attachShadow({
       mode: 'open',
     });
@@ -14,6 +17,10 @@ class AppAnzeigetafel extends HTMLElement {
     `;
 
     this.shadowRoot.appendChild(template.content.cloneNode(true));
+  }
+
+  connectedCallback() {
+    console.log('Hi!');
   }
 }
 

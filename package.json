@@ -1,0 +1,23 @@
+{
+  "name": "german-quiz",
+  "version": "1.0.0",
+  "description": "Inspired by [Duran's post](https://vk.com/wall-25336774_9795)",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@webcomponents/webcomponentsjs": "2.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Basilews/german-quiz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Basilews/german-quiz/issues"
+  },
+  "homepage": "https://github.com/Basilews/german-quiz#readme"
+}
