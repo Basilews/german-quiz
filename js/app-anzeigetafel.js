@@ -95,7 +95,6 @@ class AppAnzeigetafel extends HTMLElement {
     this.startContainer.classList.add('isHidden');
     this.steuerElemente.classList.remove('isHidden');
     this.score.classList.remove('isHidden');
-
     this.setWord(0);
   }
 
@@ -134,7 +133,7 @@ class AppAnzeigetafel extends HTMLElement {
   showGameEnd() {
     this.gameContainer.classList.add('isHidden');
     this.endContainer.classList.remove('isHidden');
-    this.finalScorePoints.innerHTML = this.count;
+    this.finalScorePoints.innerHTML = `${this.count} / ${this.maxLength}`;
   }
 
   restartGame() {
