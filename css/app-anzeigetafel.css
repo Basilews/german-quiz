@@ -5,19 +5,70 @@
   bottom: 0;
   left: 0;
   margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
   width: 600px;
-  height: 400px;
+  height: 460px;
   text-align: center;
+  font-family: 'Noto Sans', sans-serif;
   background: whitesmoke;
   border-radius: 8px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
 }
 
-::slotted(button) {
+.start {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 120px;
+  height: 40px;
+  margin-top: 0;
+  transition: margin-top .2s;
+}
+
+.start.isMargined {
+  margin-top: 210px;
+}
+
+.überschrift {
+  margin-top: 0;
+  transition: margin-top .2s;
+}
+
+.überschrift.isMargined {
+  margin-top: 140px;
+}
+
+.behälter {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ergebnis {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 70px;
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 8px;
+  border-radius: 8px;
+  text-align: left;
+  background: whitesmoke;
+}
+
+.steuerElemente {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-top: 40px;
+}
+
+button {
   width: 100px;
   height: 40px;
   margin: 0 8px;
@@ -26,11 +77,65 @@
   background: white;
 }
 
-::slotted(.tafel) {
+.beschreibung {
+  margin: 16px auto 0;
+}
+
+.wort {
+  max-width: calc(100% - 32px);
   height: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 16px;
+  background: grey;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: white;
+  border-radius: 8px;
+}
+
+.weiter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 16px auto 0;
+  font-size: 18px;
+}
+
+.richtig {
+  color: limegreen;
   font-weight: bold;
 }
 
-::slotted(.isHidden) {
+.falsch {
+  color: tomato;
+  font-weight: bold;
+}
+
+.weiterSchaltfläche {
+  margin-top: 8px;
+}
+
+.ende {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  font-size: 18px;
+}
+
+.neustartschaltfläche {
+  width: 160px;
+}
+
+.isHidden {
   display: none;
 }
