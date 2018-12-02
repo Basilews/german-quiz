@@ -7,4 +7,5 @@ Inspired by [Duran's post](https://vk.com/wall-25336774_9795)
 - [x] Counter
 - [x] Mobile version
 - [ ] RU/EN version switch
+- [ ] Add at least 20 words
 - [ ] Animations

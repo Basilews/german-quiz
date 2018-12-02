@@ -67,6 +67,28 @@ h1 {
   background: whitesmoke;
 }
 
+.languages {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  width: 90px;
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 8px;
+  border-radius: 8px;
+  text-align: left;
+  background: whitesmoke;
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+}
+
+input[type=radio] {
+  margin: 2px 4px 0 0;
+}
+
 .steuerElemente {
   display: flex;
   flex-direction: column;

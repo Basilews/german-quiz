@@ -24,6 +24,16 @@ class AppAnzeigetafel extends HTMLElement {
           <span>Score:</span>
           <span class="punktzahl">0</span>
         </div>
+        <div class="languages">
+          <label class="radio">
+            <input type="radio" name="language" checked>
+            EN
+          </label>
+          <label class="radio">
+            <input type="radio" name="language">
+            RU
+          </label>
+        </div>
         <div class="überschrift isMargined">
           <h1>We have a word for that!</h1>
         </div>
@@ -130,10 +140,16 @@ class AppAnzeigetafel extends HTMLElement {
       : this.setWord(this.index);
   }
 
+  redrawWord() {
+    //
+  }
+
   showGameEnd() {
     this.gameContainer.classList.add('isHidden');
     this.endContainer.classList.remove('isHidden');
-    this.finalScorePoints.innerHTML = `${this.count} / ${this.maxLength}`;
+    this.finalScorePoints.innerHTML = `
+      ${this.count} / ${this.maxLength}
+    `;
   }
 
   restartGame() {
