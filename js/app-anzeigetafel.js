@@ -25,11 +25,11 @@ class AppAnzeigetafel extends HTMLElement {
           <span class="punktzahl">0</span>
         </div>
         <div class="languages">
-          <label class="radio">
+          <label class="radio en">
             <input type="radio" name="language" checked>
             EN
           </label>
-          <label class="radio">
+          <label class="radio ru">
             <input type="radio" name="language">
             RU
           </label>
@@ -91,13 +91,21 @@ class AppAnzeigetafel extends HTMLElement {
     this.wrongAnswerContainer = this.shadowRoot.querySelector('.falsch');
     this.endContainer = this.shadowRoot.querySelector('.ende');
     this.finalScorePoints = this.shadowRoot.querySelector('.endstandzahl');
-    this.restartButton = this.shadowRoot.querySelector('.neustartschaltfläche')
+    this.restartButton = this.shadowRoot.querySelector('.neustartschaltfläche');
+    this.enLangLabel = this.shadowRoot.querySelector('.en');
+    this.ruLangLabel = this.shadowRoot.querySelector('.ru');
 
     this.startButton.addEventListener('click', () => this.beginTheGame());
     this.yesButton.addEventListener('click', () => this.checkAnswer(true));
     this.noButton.addEventListener('click', () => this.checkAnswer(false));
     this.nextButton.addEventListener('click', () => this.showNextWord());
     this.restartButton.addEventListener('click', () => this.restartGame());
+    this.enLangLabel.addEventListener('click', () => this.swtichLanguage('en'));
+    this.ruLangLabel.addEventListener('click', () => this.swtichLanguage('ru'));
+  }
+
+  switchLanguage(lang) {
+    //
   }
 
   beginTheGame() {
