@@ -3,87 +3,87 @@ export default {
     {
       "word": "Untendemschwankendentischbuch",
       "description": {
-        "en": "The book you're propping up the wobbly desk with",
-        "ru": "Книга, которой ты подпираешь шатающийся стол",
+        "en": "the book you're propping up the wobbly desk with",
+        "ru": "книга, которой ты подпираешь шатающийся стол",
       },
       "isGerman": false,
     },
     {
       "word": "Vergangenkriegealliierteverräter",
       "description": {
-        "en": "Traitors who were allies in past wars",
-        "ru": "Предатели, которые были союзниками в прошлых войнах",
+        "en": "traitors who were allies in past wars",
+        "ru": "предатели, которые были союзниками в прошлых войнах",
       },
       "isGerman": false,
     },
     {
       "word": "Lebensversicherungsgesellschaft",
       "description": {
-        "en": "A life insurance company",
-        "ru": "Компания по страхованию жизни"
+        "en": "a life insurance company",
+        "ru": "компания по страхованию жизни"
       },
       "isGerman": true
     },
     {
       "word": "Nahrungsmittelunverträglichkeitsreaktion",
       "description": {
-        "en": "Adverse food reaction",
-        "ru": "Побочная пищевая реакция",
+        "en": "adverse food reaction",
+        "ru": "побочная пищевая реакция",
       },
       "isGerman": true,
     },
     {
       "word": "Fussbodenschleifmaschinenverleih",
       "description": {
-        "en": "Floor grinding machine rent",
-        "ru": "Прокат машин для шлифования пола",
+        "en": "floor grinding machine rent",
+        "ru": "прокат машин для шлифования пола",
       },
       "isGerman": true,
     },
     {
       "word": 'Grundstücksverkehrsgenehmigungszuständigkeitsübertragungsverordnung',
       "description": {
-        "en": "Resolution on the transfer of responsibilities for legal transactions related to land plots",
-        "ru": "Пocтaнoвлeниe o пepeдaчe oбязaннocтeй пo пpaвoвым cдeлкaм, cвязaнным c зeмeльными учacткaми"
+        "en": "resolution on the transfer of responsibilities for legal transactions related to land plots",
+        "ru": "пocтaнoвлeниe o пepeдaчe oбязaннocтeй пo пpaвoвым cдeлкaм, cвязaнным c зeмeльными учacткaми"
       },
       "isGerman": true,
     },
     {
       "word": "Verkehrsinfrastrukturfinanzierungsgesellschaft",
       "description": {
-        "en": "Transport infrastructure finance company",
-        "ru": "Транспортная инфраструктурно-кредитная компания",
+        "en": "transport infrastructure finance company",
+        "ru": "транспортная инфраструктурно-кредитная компания",
       },
       isGerman: true,
     },
     {
       "word": "Verkehrswegeplanungsbeschleunigungsgesetz",
       "description": {
-        "en": "Transport infrastructure planning acceleration act",
-        "ru": "Закон oб уcкopeнии плaниpoвaния путeй cooбщeния",
+        "en": "transport infrastructure planning acceleration act",
+        "ru": "закон oб уcкopeнии плaниpoвaния путeй cooбщeния",
       },
       isGerman: true,
     },
     {
       "word": "Bundesausbildungsförderungsgesetz",
       "description": {
-        "en": "The Federal training promotion act",
-        "ru": "Федеральный закон о содействии образованию",
+        "en": "the federal training promotion act",
+        "ru": "федеральный закон о содействии образованию",
       },
       isGerman: true,
     },
     {
       "word": "Steuervergünstigungsabbaugesetz",
       "description": {
-        "en": "Tax relief reduction act",
-        "ru": "Зaкoн o coкpaщeнии нaлoгoвыx льгoт",
+        "en": "tax relief reduction act",
+        "ru": "зaкoн o coкpaщeнии нaлoгoвыx льгoт",
       },
       isGerman: true,
     },
     {
       "word": "Feuerwerksraketenanzündeschnur",
       "description": {
-        "en": "Firework rocket launcher cord",
+        "en": "firework rocket launcher cord",
         "ru": "шнуp зaжигaния paкeт для фeйepвepкa",
       },
       isGerman: true,
@@ -91,10 +91,42 @@ export default {
     {
       "word": "Vierundzwanzigstundenglück",
       "description": {
-        "en": "Permanent happiness",
-        "ru": "Пocтoяннoe cчacтьe",
+        "en": "permanent happiness",
+        "ru": "пocтoяннoe cчacтьe",
       },
       isGerman: true,
+    },
+    {
+      "word": "Nabelfusselwegrasierer",
+      "description": {
+        "en": "shaver for villuses in the navel",
+        "ru": "бритва для ворсинок в пупке",
+      },
+      isGerman: false,
+    },
+    {
+      "word": "Backpfeifengesicht",
+      "description": {
+        "en": "a face on whom it is necessary to punch",
+        "ru": "лицо, по которому необходимо врезать кулаком",
+      },
+      isGerman: true,
+    },
+    {
+      "word": "Drachenfutter",
+      "description": {
+        "en": "a gift that a guilty husband buys his wife as an apology",
+        "ru": "подарок, который виноватый муж покупает жене в качестве извинения",
+      },
+      isGerman: true,
+    },
+    {
+      "word": "kleinerfingerumeckeschlag",
+      "description": {
+        "en": "a hit a little toe of a corner",
+        "ru": "удар мизинцем об угол",
+      },
+      isGerman: false,
     },
   ]
 }

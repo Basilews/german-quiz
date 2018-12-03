@@ -5,13 +5,19 @@
   bottom: 0;
   left: 0;
   margin: auto;
-  width: 600px;
-  height: 460px;
+  min-width: 288px;
+  max-width: 600px;
+  width: 100%;
+  height: 430px;
   text-align: center;
   font-family: 'Noto Sans', sans-serif;
   background: whitesmoke;
   border-radius: 8px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+}
+
+h1 {
+  font-size: 1.5em;
 }
 
 .start {
@@ -61,6 +67,28 @@
   background: whitesmoke;
 }
 
+.languages {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  width: 90px;
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 8px;
+  border-radius: 8px;
+  text-align: left;
+  background: whitesmoke;
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+}
+
+input[type=radio] {
+  margin: 2px 4px 0 0;
+}
+
 .steuerElemente {
   display: flex;
   flex-direction: column;
@@ -87,12 +115,13 @@ button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 16px;
   padding: 0 16px;
   background: grey;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 14px;
   letter-spacing: 2px;
+  word-break: break-all;
   text-transform: uppercase;
   color: white;
   border-radius: 8px;
@@ -128,7 +157,7 @@ button {
   left: 0;
   margin: auto;
   width: 200px;
-  height: 200px;
+  height: 120px;
   font-size: 18px;
 }
 
@@ -138,4 +167,10 @@ button {
 
 .isHidden {
   display: none;
+}
+
+@media (min-width: 768px) {
+  .wort {
+    font-size: 18px;
+  }
 }
