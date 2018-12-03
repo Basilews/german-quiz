@@ -107,6 +107,7 @@ button {
 
 .beschreibung {
   margin: 16px auto 0;
+  padding: 0 16px;
 }
 
 .wort {
