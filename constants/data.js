@@ -128,5 +128,21 @@ export default {
       },
       isGerman: false,
     },
+    {
+      "word": "Jein",
+      "description": {
+        "en": "yes no",
+        "ru": "да нет",
+      },
+      isGerman: true,
+    },
+    {
+      "word": "Bauchgefühl",
+      "description": {
+        "en": "Intuition",
+        "ru": "Интуиция",
+      },
+      isGerman: true,
+    },
   ]
 }

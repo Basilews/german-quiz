@@ -24,7 +24,8 @@ class AppAnzeigetafel extends HTMLElement {
           <span>Score:</span>
           <span class="punktzahl">0</span>
         </div>
-        <div class="languages">
+        <div class="fortschritt istUnsichtbar">1/${list.words.length}</div>
+        <div class="sprachen">
           <label class="radio en">
             <input type="radio" name="language" checked>
             EN
@@ -41,7 +42,7 @@ class AppAnzeigetafel extends HTMLElement {
           <div class="start isMargined">
             <button class="startSchaltfläche">Begin</button>
           </div>
-          <div class="steuerElemente isHidden">
+          <div class="steuerElemente istUnsichtbar">
             <span class="wort"></span>
             <span class="beschreibung"></span>
             <h2>is that german word?</h2>
@@ -49,9 +50,9 @@ class AppAnzeigetafel extends HTMLElement {
               <button class="yes">yes</button>
               <button class="no">no</button>
             </div>
-            <div class="weiter isHidden">
-              <span class="richtig isHidden">Correct!</span>
-              <span class="falsch isHidden">Wrong!</span>
+            <div class="weiter istUnsichtbar">
+              <span class="richtig istUnsichtbar">Correct!</span>
+              <span class="falsch istUnsichtbar">Wrong!</span>
               <button class="weiterSchaltfläche">
                 next →
               </button>
@@ -59,7 +60,7 @@ class AppAnzeigetafel extends HTMLElement {
           </div>
         </div>
       </div>
-      <div class="ende isHidden">
+      <div class="ende istUnsichtbar">
         <p class="endstand">
           <b>Final score:<b>
           <b>
@@ -77,6 +78,7 @@ class AppAnzeigetafel extends HTMLElement {
     this.mainTitle = this.shadowRoot.querySelector('.überschrift');
     this.gameContainer = this.shadowRoot.querySelector('.behälter');
     this.score = this.shadowRoot.querySelector('.ergebnis');
+    this.progress = this.shadowRoot.querySelector('.fortschritt');
     this.scoreCount = this.shadowRoot.querySelector('.punktzahl');
     this.wordContainer = this.shadowRoot.querySelector('.wort');
     this.description = this.shadowRoot.querySelector('.beschreibung');
@@ -100,47 +102,50 @@ class AppAnzeigetafel extends HTMLElement {
     this.noButton.addEventListener('click', () => this.checkAnswer(false));
     this.nextButton.addEventListener('click', () => this.showNextWord());
     this.restartButton.addEventListener('click', () => this.restartGame());
-    this.enLangLabel.addEventListener('click', () => this.swtichLanguage('en'));
-    this.ruLangLabel.addEventListener('click', () => this.swtichLanguage('ru'));
+    this.enLangLabel.addEventListener('click', () => this.switchLanguage('en'));
+    this.ruLangLabel.addEventListener('click', () => this.switchLanguage('ru'));
   }
 
   switchLanguage(lang) {
-    //
+    this.lang = lang;
+    this.description.innerHTML = this.word.description[lang];
   }
 
   beginTheGame() {
     this.mainTitle.classList.remove('isMargined');
-    this.startContainer.classList.add('isHidden');
-    this.steuerElemente.classList.remove('isHidden');
-    this.score.classList.remove('isHidden');
+    this.startContainer.classList.add('istUnsichtbar');
+    this.steuerElemente.classList.remove('istUnsichtbar');
+    this.score.classList.remove('istUnsichtbar');
+    this.progress.classList.remove('istUnsichtbar');
     this.setWord(0);
   }
 
   setWord(index) {
     this.wordContainer.innerHTML = this.words[index].word;
     this.word = this.words[index];
-    this.description.innerHTML = this.words[index].description[`${this.lang}`];
+    this.description.innerHTML = this.words[index].description[this.lang];
+    this.progress.innerHTML = `${this.index + 1}/${list.words.length}`;
   }
 
   checkAnswer(answer) {
-    this.next.classList.remove('isHidden');
+    this.next.classList.remove('istUnsichtbar');
     this.yesButton.disabled = this.noButton.disabled = true;
     this.index++;
 
     if (answer === this.word.isGerman) {
       this.count++;
       this.scoreCount.innerHTML = this.count;
-      this.correctAnswerContainer.classList.remove('isHidden');
+      this.correctAnswerContainer.classList.remove('istUnsichtbar');
     }
     else {
-      this.wrongAnswerContainer.classList.remove('isHidden');
+      this.wrongAnswerContainer.classList.remove('istUnsichtbar');
     }
   }
 
   showNextWord() {
-    this.next.classList.add('isHidden');
-    this.correctAnswerContainer.classList.add('isHidden');
-    this.wrongAnswerContainer.classList.add('isHidden');
+    this.next.classList.add('istUnsichtbar');
+    this.correctAnswerContainer.classList.add('istUnsichtbar');
+    this.wrongAnswerContainer.classList.add('istUnsichtbar');
     this.yesButton.disabled = this.noButton.disabled = false;
 
     this.index === this.maxLength
@@ -148,21 +153,17 @@ class AppAnzeigetafel extends HTMLElement {
       : this.setWord(this.index);
   }
 
-  redrawWord() {
-    //
-  }
-
   showGameEnd() {
-    this.gameContainer.classList.add('isHidden');
-    this.endContainer.classList.remove('isHidden');
+    this.gameContainer.classList.add('istUnsichtbar');
+    this.endContainer.classList.remove('istUnsichtbar');
     this.finalScorePoints.innerHTML = `
       ${this.count} / ${this.maxLength}
     `;
   }
 
   restartGame() {
-    this.endContainer.classList.add('isHidden');
-    this.gameContainer.classList.remove('isHidden');
+    this.endContainer.classList.add('istUnsichtbar');
+    this.gameContainer.classList.remove('istUnsichtbar');
     this.count = this.index = this.scoreCount.innerHTML = 0;
     this.words = this.shuffle(list.words);
     this.word = null;
