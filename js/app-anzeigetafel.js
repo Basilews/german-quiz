@@ -20,12 +20,12 @@ class AppAnzeigetafel extends HTMLElement {
     template.innerHTML = `
       <link rel="stylesheet" href="css/app-anzeigetafel.css">
       <div class="behälter">
-        <div class="ergebnis isHidden">
+        <div class="ergebnis istUnsichtbar">
           <span>Score:</span>
           <span class="punktzahl">0</span>
         </div>
         <div class="fortschritt istUnsichtbar">1/${list.words.length}</div>
-        <div class="sprachen">
+        <div class="sprachen istUnsichtbar">
           <label class="radio en">
             <input type="radio" name="language" checked>
             EN
@@ -94,6 +94,7 @@ class AppAnzeigetafel extends HTMLElement {
     this.endContainer = this.shadowRoot.querySelector('.ende');
     this.finalScorePoints = this.shadowRoot.querySelector('.endstandzahl');
     this.restartButton = this.shadowRoot.querySelector('.neustartschaltfläche');
+    this.languages = this.shadowRoot.querySelector('.sprachen')
     this.enLangLabel = this.shadowRoot.querySelector('.en');
     this.ruLangLabel = this.shadowRoot.querySelector('.ru');
 
@@ -117,6 +118,7 @@ class AppAnzeigetafel extends HTMLElement {
     this.steuerElemente.classList.remove('istUnsichtbar');
     this.score.classList.remove('istUnsichtbar');
     this.progress.classList.remove('istUnsichtbar');
+    this.languages.classList.remove('istUnsichtbar');
     this.setWord(0);
   }
 
