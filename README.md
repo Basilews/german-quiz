@@ -9,7 +9,7 @@ Inspired by [Duran's post](https://vk.com/wall-25336774_9795)
 - [x] RU/EN version switch
 - [x] Animations
 - [x] Progress bar
-- [ ] Result analysis
+- [x] Result analysis
 - [ ] Fix blink bug
 - [ ] Add at least 20 words
 - [ ] Beautify
