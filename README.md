@@ -1,4 +1,4 @@
-# German Quiz
+# German words quiz
 
 Inspired by [Duran's post](https://vk.com/wall-25336774_9795)
 
@@ -10,6 +10,6 @@ Inspired by [Duran's post](https://vk.com/wall-25336774_9795)
 - [x] Animations
 - [x] Progress bar
 - [x] Result analysis
+- [x] Add at least 20 words
 - [ ] Fix blink bug
-- [ ] Add at least 20 words
 - [ ] Beautify

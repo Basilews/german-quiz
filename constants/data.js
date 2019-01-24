@@ -144,5 +144,37 @@ export default {
       },
       isGerman: true,
     },
+    {
+      "word": "Berufsqualifikationsprüfungsgebührenverordnung",
+      "description": {
+        "en": "regulation on the fee for the examination of professional qualifications",
+        "ru": "постановление о сборе за проверку профессиональной квалификации",
+      },
+      isGerman: true,
+    },
+    {
+      "word": "Informationsverarbeitungsgeschwindigkeit",
+      "description": {
+        "en": "Information processing speed",
+        "ru": "c  корость обработки информации",
+      },
+      isGerman: true,
+    },
+    {
+      "word": "Proportionalitätsfaktorenberechnungsvorschrift",
+      "description": {
+        "en": "Proportionality factor calculation rule",
+        "ru": "Правило расчета коэффициента пропорциональности",
+      },
+      isGerman: true,
+    },
+    {
+      "word": "Eierschalensollbruchstellenverursacher",
+      "description": {
+        "en": "egg cracker",
+        "ru": "яйцеколка",
+      },
+      isGerman: false,
+    },
   ]
 }

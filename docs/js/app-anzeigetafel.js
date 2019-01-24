@@ -8,6 +8,7 @@ class AppAnzeigetafel extends HTMLElement {
     this.count = 0;
     this.index = 0;
     this.maxLength = list.words.length;
+    this.median = Math.floor(this.maxLength / 2);
     this.words = this.shuffle(list.words);
     this.word = null;
 
@@ -20,12 +21,12 @@ class AppAnzeigetafel extends HTMLElement {
     template.innerHTML = `
       <link rel="stylesheet" href="css/app-anzeigetafel.css">
       <div class="behälter">
-        <div class="ergebnis isHidden">
+        <div class="ergebnis istUnsichtbar">
           <span>Score:</span>
           <span class="punktzahl">0</span>
         </div>
         <div class="fortschritt istUnsichtbar">1/${list.words.length}</div>
-        <div class="sprachen">
+        <div class="sprachen istUnsichtbar">
           <label class="radio en">
             <input type="radio" name="language" checked>
             EN
@@ -67,6 +68,7 @@ class AppAnzeigetafel extends HTMLElement {
             <span class="endstandzahl"></span>
           </b>
         </p>
+        <p class="ergebnistext"></p>
         <button class="neustartschaltfläche">
           Restart Game
         </button>
@@ -93,7 +95,9 @@ class AppAnzeigetafel extends HTMLElement {
     this.wrongAnswerContainer = this.shadowRoot.querySelector('.falsch');
     this.endContainer = this.shadowRoot.querySelector('.ende');
     this.finalScorePoints = this.shadowRoot.querySelector('.endstandzahl');
+    this.finalScoreText = this.shadowRoot.querySelector('.ergebnistext');
     this.restartButton = this.shadowRoot.querySelector('.neustartschaltfläche');
+    this.languages = this.shadowRoot.querySelector('.sprachen')
     this.enLangLabel = this.shadowRoot.querySelector('.en');
     this.ruLangLabel = this.shadowRoot.querySelector('.ru');
 
@@ -117,6 +121,7 @@ class AppAnzeigetafel extends HTMLElement {
     this.steuerElemente.classList.remove('istUnsichtbar');
     this.score.classList.remove('istUnsichtbar');
     this.progress.classList.remove('istUnsichtbar');
+    this.languages.classList.remove('istUnsichtbar');
     this.setWord(0);
   }
 
@@ -154,11 +159,29 @@ class AppAnzeigetafel extends HTMLElement {
   }
 
   showGameEnd() {
+    const { count, maxLength } = this;
     this.gameContainer.classList.add('istUnsichtbar');
     this.endContainer.classList.remove('istUnsichtbar');
     this.finalScorePoints.innerHTML = `
-      ${this.count} / ${this.maxLength}
+      ${count} / ${maxLength}
     `;
+
+    if (count === 0) {
+      this.finalScoreText.innerHTML = this.lang === 'en'
+        ? "How'd that happen? 😐"
+        : 'Как такое произошло?';
+    }
+    else if (count > 0 && count < this.median) {
+      this.finalScoreText.innerHTML = 'Nicht Schlecht! ' + this.lang === 'en'
+        ? 'I bet you can do it better!'
+        : 'Бьюсь об заклад, вы можете лучше!'
+    }
+    else if (count >= this.median && count < maxLength) {
+      this.finalScoreText.innerHTML = 'Sehr, sehr gut! 👍 Vielleicht, fehlt Ihnen nur ein kleines bisschen.';
+    }
+    else if (count === maxLength) {
+      this.finalScoreText.innerHTML = 'Sind Sie Deutschen? 🤔';
+    }
   }
 
   restartGame() {
