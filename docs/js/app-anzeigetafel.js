@@ -162,9 +162,7 @@ class AppAnzeigetafel extends HTMLElement {
     const { count, maxLength } = this;
     this.gameContainer.classList.add('istUnsichtbar');
     this.endContainer.classList.remove('istUnsichtbar');
-    this.finalScorePoints.innerHTML = `
-      ${count} / ${maxLength}
-    `;
+    this.finalScorePoints.innerHTML = `${count} / ${maxLength}`;
 
     if (count === 0) {
       this.finalScoreText.innerHTML = this.lang === 'en'
